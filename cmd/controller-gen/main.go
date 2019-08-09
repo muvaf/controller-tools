@@ -46,7 +46,9 @@ var (
 	// each turns into a command line option,
 	// and has options for output forms.
 	allGenerators = map[string]genall.Generator{
-		"crd":     crd.Generator{},
+		"crd":     crd.Generator{
+			TrivialVersions: true,
+		},
 		"rbac":    rbac.Generator{},
 		"object":  deepcopy.Generator{},
 		"webhook": webhook.Generator{},
